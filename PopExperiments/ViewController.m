@@ -13,11 +13,14 @@
 @end
 
 @implementation ViewController
+{
+    CALayer* redLayer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    CALayer* redLayer = [CALayer layer];
+    redLayer = [CALayer layer];
     redLayer.backgroundColor = [UIColor redColor].CGColor;
     redLayer.bounds = CGRectMake(0, 0, 50, 50);
     redLayer.position = CGPointMake(100, 500);
@@ -30,6 +33,7 @@
 }
 
 - (IBAction)Button1:(id)sender forEvent:(UIEvent *)event {
+    redLayer.position = CGPointMake(redLayer.position.x, redLayer.position.y - 100);
     NSLog(@"button pressed");
 }
 
