@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "POP.h"
 
 @interface ViewController ()
 
@@ -33,8 +34,28 @@
 }
 
 - (IBAction)Button1:(id)sender forEvent:(UIEvent *)event {
-    redLayer.position = CGPointMake(redLayer.position.x, redLayer.position.y - 100);
-    NSLog(@"button pressed");
+    redLayer.position = CGPointMake(redLayer.position.x + 50, redLayer.position.y - 100);
+}
+
+- (IBAction)Button2:(id)sender forEvent:(UIEvent *)event {
+    POPDecayAnimation *decayAnimation = [POPDecayAnimation animation];
+    
+    POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:@"position_on_screen" initializer:^(POPMutableAnimatableProperty *prop) {
+        prop.readBlock = ^(id obj, CGFloat values[]) {
+            values[0] = redLayer.position.x;
+            values[1] = redLayer.position.y;
+        };
+        
+        prop.writeBlock = ^(id obj, const CGFloat values[]) {
+            [redLayer setPosition:CGPointMake(values[0], values[1])];
+        };
+        // dynamics threshold
+        prop.threshold = 0.01;
+    }];
+    
+    decayAnimation.property = prop;
+    decayAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(20, -40)];
+    [self pop_addAnimation:decayAnimation forKey:@"pop_custom_decay"];
 }
 
 @end
