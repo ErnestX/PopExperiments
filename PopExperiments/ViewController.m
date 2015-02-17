@@ -58,4 +58,19 @@
     [self pop_addAnimation:decayAnimation forKey:@"pop_custom_decay"];
 }
 
+- (IBAction)Button3:(id)sender forEvent:(UIEvent *)event {
+    POPCustomAnimation *customAnimation = [POPCustomAnimation animationWithBlock:^BOOL(id obj, POPCustomAnimation *animation) {
+        redLayer.position = CGPointMake(redLayer.position.x + 5, redLayer.position.y - 15);
+        NSLog(@"block called");
+        if (redLayer.position.y < 0) {
+            return NO;
+        } else {
+            return YES;
+        }
+    }];
+    //customAnimation.repeatCount = 10;
+    [self pop_addAnimation:customAnimation forKey:@"custom_animation"];
+}
+
+
 @end

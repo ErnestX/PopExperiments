@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opj-qL-wtf">
-                                <rect key="frame" x="16" y="528" width="72" height="30"/>
+                                <rect key="frame" x="16" y="584" width="72" height="30"/>
                                 <state key="normal" title="(1) implicit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,12 +26,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouu-Xh-TdT">
-                                <rect key="frame" x="102" y="528" width="149" height="30"/>
+                                <rect key="frame" x="102" y="584" width="149" height="30"/>
                                 <state key="normal" title="(2) pop custom decay">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="Button2:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P4a-CR-xXB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWi-GO-E3I">
+                                <rect key="frame" x="16" y="617" width="128" height="30"/>
+                                <state key="normal" title="(3) pop full custom">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button3:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fng-Pa-iph"/>
                                 </connections>
                             </button>
                         </subviews>
