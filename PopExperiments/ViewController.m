@@ -29,4 +29,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)Button1:(id)sender forEvent:(UIEvent *)event {
+    NSLog(@"button pressed");
+}
+
 @end

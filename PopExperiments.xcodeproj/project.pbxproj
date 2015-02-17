@@ -861,6 +861,7 @@
 				CA45F8D31A92FB0E0071F99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA45F8D41A92FB0E0071F99F /* Build configuration list for PBXNativeTarget "PopExperimentsTests" */ = {
 			isa = XCConfigurationList;
@@ -869,6 +870,7 @@
 				CA45F8D61A92FB0E0071F99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
