@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    CALayer* redLayer = [CALayer layer];
+    redLayer.backgroundColor = [UIColor redColor].CGColor;
+    redLayer.bounds = CGRectMake(0, 0, 50, 50);
+    redLayer.position = CGPointMake(100, 500);
+    [self.view.layer addSublayer:redLayer];
 }
 
 - (void)didReceiveMemoryWarning {
