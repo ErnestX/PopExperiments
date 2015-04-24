@@ -60,16 +60,21 @@
 
 - (IBAction)Button3:(id)sender forEvent:(UIEvent *)event {
     POPCustomAnimation *customAnimation = [POPCustomAnimation animationWithBlock:^BOOL(id obj, POPCustomAnimation *animation) {
-        redLayer.position = CGPointMake(redLayer.position.x + 5, redLayer.position.y - 15);
-        NSLog(@"block called");
+//        NSLog(@"block called");
         if (redLayer.position.y < 0) {
             return NO;
         } else {
+            redLayer.position = CGPointMake(redLayer.position.x + 5, redLayer.position.y - 15);
             return YES;
         }
     }];
     //customAnimation.repeatCount = 10;
     [self pop_addAnimation:customAnimation forKey:@"custom_animation"];
+}
+
+- (IBAction)Button4:(id)sender forEvent:(UIEvent *)event {
+    NSLog(@"block4 called");
+    self.view.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
 }
 
 
