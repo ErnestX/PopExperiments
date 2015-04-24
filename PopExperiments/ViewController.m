@@ -73,8 +73,14 @@
 }
 
 - (IBAction)Button4:(id)sender forEvent:(UIEvent *)event {
-    NSLog(@"block4 called");
-    self.view.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
+    CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    [scale setFromValue:[NSNumber numberWithFloat:1.0f]];
+    [scale setToValue:[NSNumber numberWithFloat:0.8f]];
+    [scale setDuration:0.5f];
+    [scale setRemovedOnCompletion:NO];
+    [scale setFillMode:kCAFillModeForwards];
+    //self.view.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
+    [self.view.layer addAnimation:scale forKey:@"scale"];
 }
 
 
