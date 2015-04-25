@@ -34,15 +34,6 @@
                                     <action selector="Button2:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P4a-CR-xXB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNY-HT-1aB">
-                                <rect key="frame" x="152" y="617" width="181" height="30"/>
-                                <state key="normal" title="(4) implicit scale backlayer">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Button4:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JQq-dM-XT9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWi-GO-E3I">
                                 <rect key="frame" x="16" y="617" width="128" height="30"/>
                                 <state key="normal" title="(3) pop full custom">
@@ -52,6 +43,24 @@
                                     <action selector="Button3:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fng-Pa-iph"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNY-HT-1aB">
+                                <rect key="frame" x="152" y="617" width="128" height="30"/>
+                                <state key="normal" title="(4) backlayer scale">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button4:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JQq-dM-XT9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpC-oD-a8w">
+                                <rect key="frame" x="329" y="617" width="30" height="30"/>
+                                <state key="normal" title="=&gt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dED-x2-rvO" kind="show" id="HWk-rM-VAS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -59,6 +68,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller View2-->
+        <scene sceneID="51m-fO-8Y3">
+            <objects>
+                <viewController id="dED-x2-rvO" customClass="ViewController_View2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BCu-Mr-ktd"/>
+                        <viewControllerLayoutGuide type="bottom" id="STH-kE-ucd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8wS-wl-tjC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Ie-b5-2Vy"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2P-SQ-Pt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846.5" y="1078.5"/>
         </scene>
     </scenes>
 </document>

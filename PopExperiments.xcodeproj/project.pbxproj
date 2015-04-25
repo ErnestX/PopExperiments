@@ -16,6 +16,7 @@
 		CA45F8CE1A92FB0E0071F99F /* PopExperimentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA45F8CD1A92FB0E0071F99F /* PopExperimentsTests.m */; };
 		CA45F9651A92FB710071F99F /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA45F9601A92FB650071F99F /* pop.framework */; };
 		CA45F9671A92FDC80071F99F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA45F9661A92FDC80071F99F /* CoreGraphics.framework */; };
+		CA4C8DA91AEB11A900B5AF64 /* ViewController_View2.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4C8DA81AEB11A900B5AF64 /* ViewController_View2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,8 @@
 		CA45F9541A92FB640071F99F /* pop.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = pop.xcworkspace; sourceTree = "<group>"; };
 		CA45F9551A92FB640071F99F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA45F9661A92FDC80071F99F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CA4C8DA71AEB11A900B5AF64 /* ViewController_View2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController_View2.h; sourceTree = "<group>"; };
+		CA4C8DA81AEB11A900B5AF64 /* ViewController_View2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController_View2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +238,8 @@
 				CA45F8B61A92FB0D0071F99F /* AppDelegate.m */,
 				CA45F8B81A92FB0D0071F99F /* ViewController.h */,
 				CA45F8B91A92FB0D0071F99F /* ViewController.m */,
+				CA4C8DA71AEB11A900B5AF64 /* ViewController_View2.h */,
+				CA4C8DA81AEB11A900B5AF64 /* ViewController_View2.m */,
 				CA45F8BB1A92FB0D0071F99F /* Main.storyboard */,
 				CA45F8BE1A92FB0D0071F99F /* Images.xcassets */,
 				CA45F8C01A92FB0E0071F99F /* LaunchScreen.xib */,
@@ -644,6 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4C8DA91AEB11A900B5AF64 /* ViewController_View2.m in Sources */,
 				CA45F8BA1A92FB0D0071F99F /* ViewController.m in Sources */,
 				CA45F8B71A92FB0D0071F99F /* AppDelegate.m in Sources */,
 				CA45F8B41A92FB0D0071F99F /* main.m in Sources */,
