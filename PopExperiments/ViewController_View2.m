@@ -16,13 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"view2 loaded by controller");
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)Plus:(id)sender {
+    
+}
+
+- (IBAction)Minus:(id)sender {
 }
 
 /*
