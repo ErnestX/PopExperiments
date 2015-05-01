@@ -57,7 +57,7 @@
         case UIGestureRecognizerStateBegan:
         {
             NSLog(@"touch began");
-            // Remember original location
+            // Remember original location and transformation matrix
             previousLocation = blueLayer.position;
             previousTransform = whiteLayer.transform;
         }
@@ -67,9 +67,9 @@
             //lastScrollSpeed = [uigr velocityInView:self];
             CGPoint translation = [uigr translationInView:self]; // pan up or scroll down = negative
             CGPoint newPosition = CGPointMake(previousLocation.x, previousLocation.y + translation.y);
-            whiteLayer.transform = CATransform3DMakeScale(previousTransform.m11 + translation.y * 0.01, previousTransform.m22 + translation.y * 0.01, previousTransform.m33);
             [CATransaction begin];
             [CATransaction setDisableActions:YES];
+            whiteLayer.transform = CATransform3DMakeScale(previousTransform.m11 + translation.y * 0.01, previousTransform.m22 + translation.y * 0.01, previousTransform.m33);
             blueLayer.position = newPosition;
             [CATransaction commit];
         }
