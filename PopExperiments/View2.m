@@ -13,6 +13,7 @@
     CALayer* whiteLayer;
     CALayer* blueLayer;
     CGPoint previousLocation;
+    CATransform3D previousTransform;
 }
 
 /*
@@ -43,7 +44,7 @@
     blueLayer = [CALayer layer];
     blueLayer.backgroundColor = [UIColor colorWithRed:0.1 green:0.6 blue:1 alpha:1].CGColor;
     blueLayer.bounds = CGRectMake(0, 0, 50, 50);
-    blueLayer.position = CGPointMake(50, 55);
+    blueLayer.position = CGPointMake(100, 200);
     [whiteLayer addSublayer:blueLayer];
     
     UIPanGestureRecognizer* panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:uv action:@selector(handlePan:)];
@@ -58,13 +59,15 @@
             NSLog(@"touch began");
             // Remember original location
             previousLocation = blueLayer.position;
+            previousTransform = whiteLayer.transform;
         }
             
         case UIGestureRecognizerStateChanged:
         {
             //lastScrollSpeed = [uigr velocityInView:self];
             CGPoint translation = [uigr translationInView:self]; // pan up or scroll down = negative
-            CGPoint newPosition = CGPointMake(previousLocation.x + translation.x, previousLocation.y + translation.y);
+            CGPoint newPosition = CGPointMake(previousLocation.x, previousLocation.y + translation.y);
+            whiteLayer.transform = CATransform3DMakeScale(previousTransform.m11 + translation.y * 0.01, previousTransform.m22 + translation.y * 0.01, previousTransform.m33);
             [CATransaction begin];
             [CATransaction setDisableActions:YES];
             blueLayer.position = newPosition;
