@@ -83,4 +83,14 @@
 
 }
 
+- (void) zoomIn
+{
+    whiteLayer.transform = CATransform3DMakeScale(whiteLayer.transform.m11 + 0.2, whiteLayer.transform.m22 + 0.2, whiteLayer.transform.m33);
+}
+
+- (void) zoomOut
+{
+    whiteLayer.transform = CATransform3DMakeScale(whiteLayer.transform.m11 - 0.2, whiteLayer.transform.m22 - 0.2, whiteLayer.transform.m33);
+}
+
 @end

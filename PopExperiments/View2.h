@@ -10,4 +10,7 @@
 
 @interface View2 : UIView
 
+- (void) zoomIn;
+- (void) zoomOut;
+
 @end

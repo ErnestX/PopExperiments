@@ -7,6 +7,7 @@
 //
 
 #import "ViewController_View2.h"
+#import "View2.h"
 
 @interface ViewController_View2 ()
 
@@ -25,10 +26,11 @@
 }
 
 - (IBAction)Plus:(id)sender {
-    
+    [((View2*)(self.view)) zoomIn];
 }
 
 - (IBAction)Minus:(id)sender {
+    [((View2*)(self.view)) zoomOut];
 }
 
 /*
