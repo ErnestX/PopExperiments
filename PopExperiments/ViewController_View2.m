@@ -33,6 +33,11 @@
     [((View2*)(self.view)) zoomOut];
 }
 
+- (IBAction)handlePanSwitch:(id)sender {
+    [((View2*)(self.view)) switchValueChanged:((UISwitch*)sender).on];
+}
+
+
 /*
 #pragma mark - Navigation
 

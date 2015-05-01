@@ -14,6 +14,7 @@
     CALayer* blueLayer;
     CGPoint previousLocation;
     CATransform3D previousTransform;
+    BOOL switchValue;
 }
 
 /*
@@ -49,9 +50,20 @@
     
     UIPanGestureRecognizer* panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:uv action:@selector(handlePan:)];
     [uv addGestureRecognizer:panRecognizer];
+    
+    switchValue = true;
 }
 
 - (void) handlePan:(UIPanGestureRecognizer*) uigr
+{
+    if (switchValue) {
+        [self handlePanStrategyA:uigr];
+    } else {
+        [self handlePanStrategyB:uigr];
+    }
+}
+
+- (void) handlePanStrategyA:(UIPanGestureRecognizer*) uigr
 {
     switch (uigr.state) {
         case UIGestureRecognizerStateBegan:
@@ -83,6 +95,11 @@
 
 }
 
+- (void) handlePanStrategyB:(UIPanGestureRecognizer*) uigr
+{
+    NSLog(@"stragegyB");
+}
+
 - (void) zoomIn
 {
     whiteLayer.transform = CATransform3DMakeScale(whiteLayer.transform.m11 + 0.2, whiteLayer.transform.m22 + 0.2, whiteLayer.transform.m33);
@@ -91,6 +108,11 @@
 - (void) zoomOut
 {
     whiteLayer.transform = CATransform3DMakeScale(whiteLayer.transform.m11 - 0.2, whiteLayer.transform.m22 - 0.2, whiteLayer.transform.m33);
+}
+
+- (void) switchValueChanged: (BOOL) v
+{
+    switchValue = v;
 }
 
 @end
