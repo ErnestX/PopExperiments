@@ -10,11 +10,10 @@
 
 @interface View2 : UIView
 {
-
+    __weak IBOutlet UISwitch *handlePanSwitch;
 }
 
 - (void) zoomIn;
 - (void) zoomOut;
-- (void) switchValueChanged: (BOOL) v;
 
 @end
