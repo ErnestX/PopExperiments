@@ -53,7 +53,7 @@
 
 - (void) handlePan:(UIPanGestureRecognizer*) uigr
 {
-    if (handlePanSwitch.on) {
+    if (!handlePanSwitch.on) {
         [self handlePanStrategyA:uigr];
     } else {
         [self handlePanStrategyB:uigr];
@@ -86,7 +86,6 @@
         case UIGestureRecognizerStateEnded:
         {
             // NSLog(@"touch ended");
-            // start animation with lastScrollSpeed as initial speed
         }
     }
 
@@ -94,7 +93,34 @@
 
 - (void) handlePanStrategyB:(UIPanGestureRecognizer*) uigr
 {
-    NSLog(@"stragegyB");
+    //NSLog(@"stragegyB");
+    
+    switch (uigr.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            NSLog(@"touch began");
+            // Remember original location and transformation matrix
+            previousLocation = blueLayer.position;
+            previousTransform = whiteLayer.transform;
+        }
+            
+        case UIGestureRecognizerStateChanged:
+        {
+            CGPoint scrollSpeed = [uigr velocityInView:self];
+            CGPoint translation = [uigr translationInView:self]; // pan up or scroll down = negative
+            CGPoint newPosition = CGPointMake(previousLocation.x, previousLocation.y + translation.y);
+            [CATransaction begin];
+            [CATransaction setDisableActions:YES];
+            blueLayer.position = newPosition;
+            [CATransaction commit];
+            whiteLayer.transform = CATransform3DMakeScale(previousTransform.m11 + scrollSpeed.y * 0.001, previousTransform.m22 + scrollSpeed.y * 0.001, previousTransform.m33);
+        }
+            
+        case UIGestureRecognizerStateEnded:
+        {
+            // NSLog(@"touch ended");
+        }
+    }
 }
 
 - (void) zoomIn
